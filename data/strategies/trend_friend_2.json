@@ -1,0 +1,33 @@
+{
+    "description": "Stock collection with good 2 months performance.",
+    "filterName": "SecureHotH2Month",
+    "title": "Trend is your friend strategy",
+    "name": "Trend is your friend strategy",
+    "enable": true,
+    "icon": {
+        "size": 100,
+        "id": 0,
+        "color": 9
+    },
+    "query": {
+        "collection": "stocks",
+        "limit": 10,
+        "order" : [
+            {
+                "descending": true,
+                "field": "SecureHotH2Month_status"
+            },
+            {
+                "descending": true,
+                "field": "SecureHotH2Month_value"
+            }
+        ],
+        "where" : [
+            {
+                "operator": ">=",
+                "value": 0,
+                "field": "SecureHotH2Month_status"
+            }
+        ]
+    }
+}

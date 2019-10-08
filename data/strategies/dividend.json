@@ -1,0 +1,35 @@
+{
+    "description": "From top dividend kings by yield to the best you can buy and hold forever",
+    "filterName": "DividendKings",
+    "title": "Dividend Kings List",
+    "name": "Dividend Kings",
+    "prefix": "",
+    "suffix": "€",
+    "enable": true,
+    "icon": {
+        "size": 100,
+        "id": 2,
+        "color": 2
+    },
+    "query": {
+        "collection": "stocks",
+        "limit": 10,
+        "order" : [
+            {
+                "descending": true,
+                "field": "DividendKings_status"
+            },
+            {
+                "descending": true,
+                "field": "DividendKings_value"
+            }
+        ],
+        "where" : [
+            {
+                "operator": ">=",
+                "value": 0,
+                "field": "DividendKings_status"
+            }
+        ]
+    }
+}

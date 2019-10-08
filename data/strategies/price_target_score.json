@@ -1,0 +1,35 @@
+{
+    "description": "Stocks that have exceeded analysts expectations enormously.",
+    "filterName": "PriceTargetScore",
+    "title": "Unexpected stock events",
+    "name": "Unexpected stock events",
+    "prefix": "",
+    "suffix": "%",
+    "enable": true,
+    "icon": {
+        "size": 100,
+        "id": 10,
+        "color": 6
+    },
+    "query": {
+        "collection": "stocks",
+        "limit": 10,
+        "order" : [
+            {
+                "descending": true,
+                "field": "PriceTargetScore_status"
+            },
+            {
+                "descending": true,
+                "field": "PriceTargetScore_value"
+            }
+        ],
+        "where" : [
+            {
+                "operator": ">=",
+                "value": 0,
+                "field": "PriceTargetScore_status"
+            }
+        ]
+    }
+}

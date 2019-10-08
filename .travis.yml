@@ -1,0 +1,18 @@
+env:
+  global:
+  - STOCK2FIREBASE_MAX_PROCESSES=1
+  - STOCK2FIREBASE_ID=0
+  - CRED_JSON=firebase_sdk.json
+  - DATA_ROOT=data/strategies
+  - secure: ky824m+xFa6bD0GKE/5kcL45VNGwIn3+8/SwI2HBbV+0DHJlOxXSMSPbv7EXYuwDkwswOaIAC+RRxvzoxT/caR6hjia7fxlMpJpoIyyAkdzdyVDKpYRRSlBNu7SBtK27J6GQ7J45EQ790C668RIpFd7cKDS9ZJnokKYQPmddVoDe6/7EhO2Jr9mPbJqS3HeOOloBk1shxEaFV+M40jqbRyyFcEmydRyEW9tKiK0dHW7DRHOefHEdC3qlsS15XvnFSKEa1A/lQj+L5EyaPpNO9xSQPl5T4UhQx+dpoXOfWA1SgFnvelQ8vbfI+BfUlk7HXCBSBeP/myKcdYQ92R5G1mMBkEACbPsg9BY8mcWThQsi4cf15ZXOB5IaS93zwtLXbzGW9Re61mHbOOG87+0oo1uDtU7yVNdpAyQxMvs4+X0Yo3k8hDbf9OCMylIZeYh1Z+Ud56svmeavDvjFFftmuR3iSEVGMDwyUJnkcrZo/trjbNtqodOxYq2mXa1ByvynZFTZDT6ZTV/XX/cY38/WJqd0k2q6l96sFXc0cMLMhlFUP4Lj+ZOl7eoFqDq9elzB5s2IQs/tBs/EBKs/LJ0uxlhwLy5GJkrvP2UQoi5CrBaJ1MkVRQnVG1A+t20fIzvUHKcSBoPNcUxz/uIVuLwgE0adceE08DkmMeFaa6CKstU=
+language: python
+python:
+- '3.6'
+cache: pip
+install:
+- pip install -r requirements.txt
+script:
+- travis_wait 30 stocks -s
+before_install:
+- openssl aes-256-cbc -K $encrypted_606a400ea39e_key -iv $encrypted_606a400ea39e_iv
+  -in firebase_sdk.json.enc -out firebase_sdk.json -d

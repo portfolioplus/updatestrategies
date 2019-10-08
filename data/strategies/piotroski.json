@@ -1,0 +1,35 @@
+{
+    "description": "Stocks with a good piotoski-f scores.",
+    "filterName": "PiotroskiScore",
+    "title": "Piotroski-F Score",
+    "name": "Piotroski-F Score",
+    "prefix": "",
+    "suffix": "",
+    "enable": true,
+    "icon": {
+        "size": 100,
+        "id": 1,
+        "color": 3
+    },
+    "query": {
+        "collection": "stocks",
+        "limit": 10,
+        "order" : [
+            {
+                "descending": true,
+                "field": "PiotroskiScore_status"
+            },
+            {
+                "descending": true,
+                "field": "PiotroskiScore_value"
+            }
+        ],
+        "where" : [
+            {
+                "operator": ">=",
+                "value": 0,
+                "field": "PiotroskiScore_status"
+            }
+        ]
+    }
+}

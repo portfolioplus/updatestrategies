@@ -1,0 +1,35 @@
+{
+    "description": "Stocks with good levermann scores.",
+    "filterName": "LevermannScore",
+    "title": "Levermann",
+    "name": "Top performer",
+    "enable": true,
+    "prefix": "",
+    "suffix": "",
+    "icon": {
+        "size": 100,
+        "id": 1,
+        "color": 1
+    },
+    "query": {
+        "collection": "stocks",
+        "limit": 10,
+        "order" : [
+            {
+                "descending": true,
+                "field": "LevermannScore_status"
+            },
+            {
+                "descending": true,
+                "field": "LevermannScore_value"
+            }
+        ],
+        "where" : [
+            {
+                "operator": ">=",
+                "value": 0,
+                "field": "LevermannScore_status"
+            }
+        ]
+    }
+}

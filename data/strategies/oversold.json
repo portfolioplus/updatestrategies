@@ -1,0 +1,35 @@
+{
+    "description": "Stocks with a oversold scores.",
+    "filterName": "RsiP14",
+    "title": "Oversold Score",
+    "name": "Oversold Score",
+    "prefix": "",
+    "suffix": "",
+    "enable": true,
+    "icon": {
+        "size": 100,
+        "id": 4,
+        "color": 1
+    },
+    "query": {
+        "collection": "stocks",
+        "limit": 10,
+        "order" : [
+            {
+                "descending": true,
+                "field": "RsiP14_status"
+            },
+            {
+                "descending": true,
+                "field": "RsiP14_value"
+            }
+        ],
+        "where" : [
+            {
+                "operator": ">=",
+                "value": 0,
+                "field": "RsiP14_status"
+            }
+        ]
+    }
+}
