@@ -1,1 +1,1 @@
-pyfirebasestockscli==1.0.4
+pyfirebasestockscli>=1.0.5
