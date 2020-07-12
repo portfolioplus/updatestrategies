@@ -13,7 +13,7 @@
     },
     "query": {
         "collection": "stocks",
-        "limit": 10,
+        "limit": 100,
         "order" : [
             {
                 "descending": true,
